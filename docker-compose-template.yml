@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+    mysql:
+        image: [[ IMAGE ]]
+        container_name: [[ CONTAINER_NAME ]]
+        network_mode: bridge
+        restart: always
+        environment:
+            - SERVICE_3306_NAME=[[ SERVICE_NAME ]]
+            - SERVICE_3306_CHECK_TCP=true
+            - SERVICE_3306_CHECK_INTERVAL=30s
+            - SERVICE_3306_CHECK_TIMEOUT=10s
+            - MYSQL_ROOT_PASSWORD=[[ PASSWD ]]
+        ports:
+            - "3306"
+        volumes:
+            - ./mysql_data:/home/work/data:rw
+            - ./logs:/home/work/logs:rw
+            - ./my.cnf:/etc/mysql/my.cnf:ro

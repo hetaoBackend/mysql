@@ -1,0 +1,57 @@
+[mysqld]
+skip-ssl
+user=work
+bind-address = 0.0.0.0
+character-set-server = utf8
+collation-server = utf8_unicode_ci
+skip-character-set-client-handshake
+datadir = [[ DATADIR ]]
+
+innodb_read_only = [[ INNODB_READ_ONLY ]]
+read_only = [[ READ_ONLY ]]
+super_read_only = [[ SUPER_READ_ONLY ]]
+transaction_read_only = [[ TRANSACTION_READ_ONLY ]]
+transaction-isolation = [[ TRANSACTION_ISOLATION ]]
+
+innodb_fast_shutdown = [[ INNODB_FAST_SHUTDOWN ]]
+innodb_buffer_pool_dump_at_shutdown = [[ INNODB_BUFFER_POOL_DUMP_AT_SHUTDOWN ]]
+innodb_read_io_threads = [[ INNODB_READ_IO_THREADS ]]
+innodb_write_io_threads = [[ INNODB_WRITE_IO_THREADS ]]
+innodb_strict_mode = 1
+innodb_buffer_pool_size = [[ INNODB_BUFFER_POOL_SIZE ]]
+innodb_buffer_pool_dump_pct = [[ INNODB_BUFFER_POOL_DUMP_PCT ]]
+innodb_flush_log_at_trx_commit = 0
+innodb_status_file = 1
+innodb_doublewrite = 0
+innodb_log_file_size = [[ INNODB_LOG_FILE_SIZE ]]
+innodb_log_buffer_size = [[ INNODB_LOG_BUFFER_SIZE ]]
+
+tmp_table_size = [[ TMP_TABLE_SIZE ]]
+max_heap_table_size = [[ MAX_HEAP_TABLE_SIZE ]]
+sort_buffer_size = [[ SORT_BUFFER_SIZE ]]
+thread_cache_size = 50
+range_optimizer_max_mem_size = [[ RANGE_OPTIMIZER_MAX_MEM_SIZE ]]
+max_length_for_sort_data = [[ MAX_LENGTH_FOR_SORT_DATA ]]
+
+skip-log-bin
+sync_binlog = 0
+
+query_cache_type = [[ QUERY_CACHE_TYPE ]]
+query_cache_limit = [[ QUERY_CACHE_LIMIT ]]
+query_cache_size = [[ QUERY_CACHE_SIZE ]]
+
+slow_query_log = [[ SLOW_QUERY_LOG ]]
+long_query_time = [[ LONG_QUERY_TIME ]]
+max_execution_time = [[ MAX_EXECUTION_TIME ]]
+slow_query_log_file = /home/work/logs/slow_query.log
+
+max_connections = [[ MAX_CONNECTIONS ]]
+connect_timeout = [[ CONNECT_TIMEOUT ]]
+wait_timeout = [[ WAIT_TIMEOUT ]]
+interactive_timeout = [[ INTERACTIVE_TIMEOUT ]]
+max_connect_errors = [[ MAX_CONNECT_ERRORS ]]
+
+optimizer_search_depth = [[ OPTIMIZER_SEARCH_DEPTH ]]
+
+log_error = /home/work/logs/error.log
+general_log_file = /home/work/logs/general.log
